@@ -1,3 +1,8 @@
+#!/bin/bash
+currentDir=$(dirname $0)
+if [ ${currentDir} == "." ];then
+    currentDir=$PWD
+fi
 #日志处理
 function log_info ()
 {
@@ -83,4 +88,27 @@ function check_ip() {
         echo -e "\033[41;37m IP format error! \033[0m"
         return 1
     fi
+}
+function get_ip(){
+    count_1=1
+    while true; do
+        if [ $count_1 -le 3 ]; then
+            read -r -p "Please enter the IP: " IP
+            string_check $IP
+            if [ $? -ne 0 ];then
+                count_1=`expr $count_1 + 1`
+                continue
+            fi
+            check_ip $IP
+            if [ $? -ne 0 ];then
+                count_1=`expr $count_1 + 1`
+                continue
+            fi
+            break
+        else
+            log_error "Add vCenter user fail!"
+            echo "Add vCenter user fail!"
+            exit 1
+        fi
+    done
 }
