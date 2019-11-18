@@ -13,3 +13,6 @@ sed -i '/start/,/end/d' aaa.txt
 #替换范围中的内容
 sed -i '/start/,/end/ s/aa/bb/g' aaa.txt
 sed -n '/start/,/end/ s/aa/bb/p' aaa.txt
+#替换行内容
+sed -i '/aa/c bb' aaa.txt
+
