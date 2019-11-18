@@ -112,3 +112,16 @@ function get_ip(){
         fi
     done
 }
+#拷贝目录
+function installPackage()
+{
+    #解压安装文件到指定路径
+    tar -zxvf $installPackageDir/zookeeper-*.tar.gz -C $installTempDir
+    cd temp/
+    #拷贝 zookeeper 文件到指定的安装路径下
+    for dir in $(ls ./)
+    do
+        [ -d $dir ] && zookeeperDirname=$dir
+    done
+    rm -rf $installTempDir/
+}
