@@ -1,3 +1,4 @@
+#!/bin/bash
 ##sed字段操作
 function sed(){
   ##(如果sed中有变量，将单引号变为双引号)
@@ -16,10 +17,13 @@ function sed(){
   sed -n '/start/,/end/ s/aa/bb/p' aaa.txt
   #替换行内容
   sed -i '/aa/c bb' aaa.txt
+  #替换变量
+    sed -i s"/ip/$ip/g" *.txt
 }
 function variable(){
   aa='cjk-fda-123'
   echo ${aa/-/#}  #/匹配第一个
   echo ${aa//-/#} #/贪婪匹配全部
+  echo ${aa#*fda} #截取fda右测所有
 }
 
