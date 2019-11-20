@@ -33,6 +33,27 @@ function fn_log ()  {
         exit 1
     fi
 }
+#脚本日志
+function log_error()
+{
+    dir=$(basename $(dirname $0))/$(basename $0)
+    echo "$(date "+%Y-%m-%d %H:%M:%S") [ERROR] ${dir}: $LINENO $1" >> ${log_file}
+}
+
+function log_info()
+{
+    dir=$(basename $(dirname $0))/$(basename $0)
+    echo "$(date "+%Y-%m-%d %H:%M:%S") [INFO] ${dir}: $LINENO $1" >> ${log_file}
+}
+
+function check_result()
+{
+    if [ $? -ne 0 ];then
+        log_error "$1"
+        echo "$1"
+        exit 1
+    fi
+}
 #密码复杂度校验
 function ispwd () {
     passwd=$1
@@ -57,9 +78,6 @@ function ispwd () {
         return 1
     fi
     if [[ $passwd =~ ";" ]];then
-        return 1
-    fi
-    if [[ $passwd =~ '\' ]];then
         return 1
     fi
     if [[ $passwd =~ "'" ]];then
