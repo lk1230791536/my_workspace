@@ -24,9 +24,10 @@ function sed(){
 }
 function variable(){
   aa='cjk-fda-123'
-  echo ${aa/-/#}  #/匹配第一个
-  echo ${aa//-/#} #/贪婪匹配全部
+  echo ${aa/-/#}  #/匹配第一个，替换
+  echo ${aa//-/#} #/贪婪匹配全部，替换
   echo ${aa#*fda} #截取fda右测所有
+  echo ${aa%fda*} #截取fda左侧所有
   echo ${aa:2:3}  #根据游标截取
   echo ${#aa} #显示字符串长度
 }
