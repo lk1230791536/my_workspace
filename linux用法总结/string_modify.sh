@@ -22,6 +22,12 @@ function sed(){
   #特定行号后追加内容
   sed -i ${LINE_NUM}'s/$/content/' aaa.txt
 }
+function awk(){
+    #第一行不显示
+    awk '{if (NR>1){print $3}}' aaa.txt
+    #显示特定行号内容
+    awk 'NR==4 {print}' aaa.txt
+}
 function variable(){
   aa='cjk-fda-123'
   echo ${aa/-/#}  #/匹配第一个，替换
