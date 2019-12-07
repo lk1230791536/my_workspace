@@ -1,4 +1,5 @@
 #!/bin/bash
+##shell脚本对alias命令不起作用
 currentDir=$(dirname $0)
 if [ ${currentDir} == "." ];then
     currentDir=$PWD
