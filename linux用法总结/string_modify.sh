@@ -21,6 +21,8 @@ function sed(){
   sed -i s"/ip/$ip/g" *.txt
   #特定行号后追加内容
   sed -i ${LINE_NUM}'s/$/content/' aaa.txt
+  #删除空行
+  sed -i '/^\s*$/d' aaa.txt
 }
 function awk(){
     #第一行不显示
