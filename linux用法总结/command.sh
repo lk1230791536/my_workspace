@@ -15,6 +15,8 @@ function commands(){
   date +%Y%m%d --date="+1 day"  #显示前一天的日期
   date +%Y%m%d --date="-1 day"  #显示后一天的日期
   date +%s  #从 1970 年 1 月 1 日 00:00:00 UTC 到目前为止的秒数（时间戳）可用于判断时间过期
+  #控制程序运行的时间
+  timeout 10 command
 }
 function search(){
   find $installDir/tomcat_*/webapps/*/WEB-INF  -name 'bootstrap.yml'
