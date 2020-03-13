@@ -30,3 +30,27 @@ do
 done
 echo
 }
+
+#!/bin/bash
+nohup sh 123.sh >> /dev/null 2>&1 &
+spa=''
+i=0
+echo "start"
+while [ $i -le 4 ]
+do
+    if [[ $(ps -ef |grep 123.sh|grep -v grep|wc -l) -gt 0 ]];then
+    printf "\r wait%-3s \r" "$spa" ;
+    sleep 1
+    ((i=i+1))
+    if [ $i -gt 3 ];then
+    i=1
+    spa='.'
+    fi
+    spa+='.'
+    else
+        break
+    fi
+done
+echo ""
+echo "finish"
+exit 0
