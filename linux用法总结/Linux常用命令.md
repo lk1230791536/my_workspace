@@ -2,5 +2,5 @@
 ### curl
 - -k:允许不使用证书到SSL站点
 - -s:静音模式。不输出任何东西
-- eg：curl -k -s http://127.0.0.1:port 
+- eg：`curl -k -s http://127.0.0.1:port `
 
