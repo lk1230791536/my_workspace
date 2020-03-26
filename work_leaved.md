@@ -10,3 +10,6 @@ https://kuboard.cn/learning/
 
 ## ansible
    - https://www.cnblogs.com/keerya/p/8004566.html
+## jenkins下载
+    - http://updates.jenkins-ci.org/download/plugins/
+    - https://pkg.jenkins.io/redhat/
