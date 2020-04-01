@@ -13,3 +13,5 @@ https://kuboard.cn/learning/
 ## jenkins下载
     - http://updates.jenkins-ci.org/download/plugins/
     - https://pkg.jenkins.io/redhat/
+## 项目开源
+    - https://github.com/ROBO-FCCV/vmwarePlugin/releases
