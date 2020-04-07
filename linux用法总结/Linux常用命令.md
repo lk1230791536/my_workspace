@@ -13,4 +13,17 @@
    - date +%s  #从 1970 年 1 月 1 日 00:00:00 UTC 到目前为止的秒数（时间戳）可用于判断时间过期
 - timeout (控制程序运行的时间)
    - eg:timeout 10 command
+- find [路径] [选项] [操作]
+   - -name 文件名查找  #find /etc -name '*.conf'
+   - -iname 不区分大小写
+   - -user/-group 属主/属组查找
+   - -type 文件类型查找
+      - f 文件; d 目录; c 字符设备; b 块设备; l 链接文件; p 管道
+   - -size 文件大小查询  #find /etc -size -2M
+   - -mtime 根据时间(天)查找   #find /etc -mtime +5 -name '*.log'
+      - -n n天内修改文件; +n n天外修改文件; n 第n天的修改文件
+   - -mmin 根据时间（分）查找
+   - -mindepth n 从第n级目录开始搜索
+   - -maxdepth n 表示至多搜索到第 n-1 级子目录
+      
 
