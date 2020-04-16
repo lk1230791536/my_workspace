@@ -6,7 +6,7 @@ LANG="zh_CN.UTF-8"
 #方法一：通过系统环境变量($RANDOM)实现：
 echo "$RANDOM"|md5sum|cut -c 5-15
 #方法二：通过openssl产生随机数，示例：
-openssl rand -base64 8
+openssl rand -hex 8
 #方法三：通过时间（date）获取随机数，示例：
 date +%s%N  #%N微秒
 #方法四:通过UUID生成随机数,示例：
