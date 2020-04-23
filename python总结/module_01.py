@@ -49,7 +49,7 @@ info = json.load(f) #读取json文件
 #使用xml.dom.minidom来解析xml文件
 from xml.dom import minidom
 root = minidom.parse("server.xml")  #读取文件
-collection = DOMTree.documentElement  #解析文件
+collection = root.documentElement  #解析文件
 connectorNode = root.getElementsByTagName("Connector")[0] #定位到匹配的标签名
 port = connectorNode.getAttribute("port") #获取标签中的对应属性值
 detail = port.childNodes[0].data  #获取标签中的数据
