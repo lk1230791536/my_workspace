@@ -21,3 +21,4 @@ function commands(){
 function search(){
   find $installDir/tomcat_*/webapps/*/WEB-INF  -name 'bootstrap.yml'
 }
+kill -0 uid #检查一个进程是否存在，存在返回0
