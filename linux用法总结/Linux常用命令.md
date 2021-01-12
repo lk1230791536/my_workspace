@@ -30,6 +30,9 @@
    - -mindepth n 从第n级目录开始搜索
    - -maxdepth n 表示至多搜索到第 n-1 级子目录
 - ***xargs*** (可以将管道或标准输入（stdin）数据转换成命令行参数，也能够从文件的输出中读取数据;多行变单行，单行变多行)
+   - 多行输入单行输出  #cat test.txt | xargs
+   - -n 选项多行输出 #cat test.txt | xargs
+   - -d 选项可以自定义一个定界符
    
 - ***touch*** 
    - 修改文件时间 touch -mt 199209121515 test.log
